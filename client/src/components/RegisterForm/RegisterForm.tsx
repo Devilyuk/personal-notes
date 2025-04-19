@@ -11,13 +11,13 @@ import { z } from "zod";
 
 const registerSchema = z.object({
   username: z.string()
-    .min(2, 'Имя не может содержать короче 2 символов')
+    .min(5, 'Имя не может содержать короче 5 символов')
     .max(30, 'Имя не может содержать более 30 символов'),
   email: z.string()
     .email('Некорректная почта')
     .min(5, 'Почта должна содержать более 5 символов'),
   password: z.string()
-    .min(6, 'Пароль не может содержать менее 6 символов')
+    .min(8, 'Пароль не может содержать менее 8 символов')
 });
 
 type RegisterForm = z.infer<typeof registerSchema>;

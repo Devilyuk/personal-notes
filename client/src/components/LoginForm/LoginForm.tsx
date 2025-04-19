@@ -14,7 +14,7 @@ const loginSchema = z.object({
     .email('Некорректная почта')
     .min(5, 'Почта должна содержать более 5 символов'),
   password: z.string()
-    .min(6, 'Пароль не может содержать менее 6 символов')
+    .min(8, 'Пароль не может содержать менее 8 символов')
 })
 
 type LoginForm = z.infer<typeof loginSchema>;
