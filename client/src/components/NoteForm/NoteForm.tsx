@@ -11,11 +11,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const createNoteSchema = z.object({
   title:  z.string()
-            .min(3, 'Длина заголовка должна быть не менее 3 символов!')
+            .min(5, 'Длина заголовка должна быть не менее 5 символов!')
             .max(30, 'Длина заголовка не может быть больше 30 символов!'),
   text:   z.string()
           .min(10, 'Длина описания должна быть не менее 10 символов!')
-          .max(200, 'Длина текста не может быть больше 200 символов!')
+          .max(300, 'Длина текста не может быть больше 300 символов!')
 });
 
 type CreateNoteForm = z.infer<typeof createNoteSchema>;
