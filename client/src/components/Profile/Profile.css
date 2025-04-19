@@ -1,0 +1,22 @@
+.profile-header {
+    position: sticky;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.profile-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .profile-body {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,18 @@
+.note-list-view {
+  flex: 4
+}
+
+.note-list-view__list {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  height: 100%;
+  margin-inline: auto;
+  overflow: auto;
+  padding: 16px;
+  background-color: white;
+  flex-wrap: wrap;
+  gap: 20px;
+}
