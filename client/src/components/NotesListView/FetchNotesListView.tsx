@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { fetchNotesList } from "../../api/Note";
 import { Loader } from "../Loader";
 import { NotesListView } from "./NotesListView";
@@ -13,17 +13,11 @@ export const FetchNotesListView = () => {
         queryFn: () => fetchNotesList({page, pageSize: 6}),
         queryKey: ['notes', page],
         retry: false
-    }, queryClient); 
-
-    const notesListMutation = useMutation({
-        mutationFn: (data: number) => setPage(data),
-        onSuccess() {
-            queryClient.invalidateQueries({queryKey: ['notes']})
-        }
-    }, queryClient)
+    }, queryClient);
 
     const handleChangePage = (page: number) => {
-        notesListMutation.mutate(page)
+        setPage(page)
+        queryClient.invalidateQueries({queryKey: ['notes']})
     }
 
     switch (notesListQuery.status) {
